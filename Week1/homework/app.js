@@ -1,5 +1,6 @@
 'use strict';
 
+// eslint-disable-next-line no-unused-vars
 const bookTitles = [
   // Replace with your own book titles
   'my_experiment_with_truth',
@@ -12,16 +13,17 @@ const bookTitles = [
 ];
 
 // 1.1 & 1.2 Replace with your own code
-//console.log(bookTitles);
+// console.log(bookTitles);
 
-//1.3 make a function to create ul and li */
+// 1.3 make a function to create ul and li */
 
 // Create ul  element  and assign id
 
 const ul = document.createElement('ol');
 
+// eslint-disable-next-line no-unused-vars
 function createBookList(bookId) {
-  for (let i of bookId) {
+  for (const i of bookId) {
     // eslint-disable-next-line no-unused-expressions
     const li = document.createElement('li');
     li.appendChild(document.createTextNode(i));
@@ -29,14 +31,14 @@ function createBookList(bookId) {
   }
 }
 
-//createBookList(bookTitles);
+// createBookList(bookTitles);
 
 document.body.appendChild(ul);
 
-//1.5
+// 1.5
 
 // eslint-disable-next-line vars-on-top
-let books = {
+const books = {
   my_experiment_with_truth: {
     title: 'My experiment with truth',
     language: 'English',
@@ -88,9 +90,9 @@ function createBookListUsingObject(bookObj) {
   let j = 0;
 
   // eslint-disable-next-line guard-for-in
-  for (let i in bookObj) {
+  for (const i in bookObj) {
     const li = document.createElement('li');
-    //console.log(objectKeys[j]);
+    // console.log(objectKeys[j]);
     li.setAttribute('id', objectKeys[j]);
 
     const head = document.createElement('h1');
@@ -122,7 +124,7 @@ createBookListUsingObject(books);
 
 // Create a object with Bookid and image
 
-let bookimage = {
+const bookimage = {
   my_experiment_with_truth: 'gandhi.jpg',
   harry_potter: 'harry.jpg',
   three_men_in_the_boat: 'threemenintheboat.jpg',
@@ -136,10 +138,10 @@ function imageDisplay(imageObject) {
   // eslint-disable-next-line guard-for-in
   let j = 0;
   // eslint-disable-next-line guard-for-in
-  for (let i in imageObject) {
-    //console.log(Object.keys(imageObject)[j]);
-    let container = document.getElementById(Object.keys(imageObject)[j]);
-    let imageElement = document.createElement('img');
+  for (const i in imageObject) {
+    // console.log(Object.keys(imageObject)[j]);
+    const container = document.getElementById(Object.keys(imageObject)[j]);
+    const imageElement = document.createElement('img');
     imageElement.src = imageObject[i];
     container.appendChild(imageElement);
     j++;
