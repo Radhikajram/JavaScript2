@@ -1,4 +1,4 @@
-const { myNumbers, doubleOddNumbers } = require(`../homework/map-filter`);
+const { myNumbers, doubleOddNumbers } = require(`../homework/map-filter`).default;
 
 describe('map_filter', () => {
   test('result -> [2, 6]', () => {

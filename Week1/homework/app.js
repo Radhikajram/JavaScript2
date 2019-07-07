@@ -19,7 +19,8 @@ const bookTitles = [
 
 // Create ul  element  and assign id
 
-const ul = document.createElement('ol');
+const ul = document.createElement('ul');
+ul.setAttribute('id', 'booktitle');
 
 // eslint-disable-next-line no-unused-vars
 function createBookList(bookId) {
@@ -111,7 +112,7 @@ function createBookListUsingObject(bookObj) {
     li.appendChild(head);
     li.appendChild(headLanguageContent);
     li.appendChild(headAuthor);
-    document.write('<br>');
+    li.style.cssFloat = 'left';
 
     ul.appendChild(li);
 
@@ -149,3 +150,30 @@ function imageDisplay(imageObject) {
 }
 
 imageDisplay(bookimage);
+
+// eslint-disable-next-line no-undef
+ul.style.display = 'grid';
+ul.style.gridTemplateColumns = 'auto auto';
+ul.style.gridAutoColumns = 'minmax(auto,auto)';
+ul.style.gridAutoRows = 'minmax(auto,auto)';
+
+// eslint-disable-next-line no-unused-vars
+function createGrid(x) {
+  for (let rows = 0; rows < x; rows++) {
+    for (let col = 0; col < x; col++) {
+      // eslint-disable-next-line no-undef
+    //  $('#booktitle').append("<div> class='grid'></div>");
+      const grid = document.getElementById("booktitle");
+      grid.appendChild(li)
+    }
+  }
+
+  // eslint-disable-next-line no-undef
+  $('.grid').height(960 / x);
+  // eslint-disable-next-line no-undef
+  $('.grid').width(960 / x);
+}
+
+// eslint-disable-next-line no-undef
+createGrid(2);
+*/
