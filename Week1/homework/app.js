@@ -32,11 +32,9 @@ function createBookList(bookId) {
   }
 }
 
-// createBookList(bookTitles);
-
 document.body.appendChild(ul);
 
-// 1.5
+// 1.4 create a object of book elements with title,language and author information.
 
 // eslint-disable-next-line vars-on-top
 const books = {
@@ -82,8 +80,7 @@ const books = {
     author: 'Charles Dickens',
   },
 };
-
-// const ul = document.createElement('ul');
+// 1.5 create Html element for Book title,Language and Author.Create id for each li element
 
 function createBookListUsingObject(bookObj) {
   // eslint-disable-next-line guard-for-in
@@ -96,7 +93,7 @@ function createBookListUsingObject(bookObj) {
     // console.log(objectKeys[j]);
     li.setAttribute('id', objectKeys[j]);
 
-    const head = document.createElement('h1');
+    const head = document.createElement('h2');
     const headContent = document.createTextNode(bookObj[i].title);
 
     const headLanguage = document.createElement('h2');
@@ -112,7 +109,6 @@ function createBookListUsingObject(bookObj) {
     li.appendChild(head);
     li.appendChild(headLanguageContent);
     li.appendChild(headAuthor);
-    li.style.cssFloat = 'left';
 
     ul.appendChild(li);
 
@@ -123,7 +119,21 @@ function createBookListUsingObject(bookObj) {
 
 createBookListUsingObject(books);
 
-// Create a object with Bookid and image
+// 1.6 set up display property of ul element
+
+document.getElementById('booktitle').style.display = 'grid';
+document.getElementById('booktitle').style.gridTemplateColumns = 'auto auto';
+document.getElementById('booktitle').style.gridAutoColumns = 'minmax(auto, auto)';
+document.getElementById('booktitle').style.gridAutoRows = 'minmax(auto, auto)';
+document.getElementById('booktitle').style.gridGap = '2em';
+
+// 1.6 Set up the style of ul element
+
+ul.style.listStyle = 'none';
+ul.style.border = '2px red solid';
+ul.style.padding = '2em';
+
+// 1.7 Create a object with Bookid and image.
 
 const bookimage = {
   my_experiment_with_truth: 'gandhi.jpg',
@@ -135,12 +145,13 @@ const bookimage = {
   the_tale_of_two_cities: 'thetaleoftwocities.jpg',
 };
 
+// 1.8 Match the book image with book title using unique list id of the book
+
 function imageDisplay(imageObject) {
   // eslint-disable-next-line guard-for-in
   let j = 0;
   // eslint-disable-next-line guard-for-in
   for (const i in imageObject) {
-    // console.log(Object.keys(imageObject)[j]);
     const container = document.getElementById(Object.keys(imageObject)[j]);
     const imageElement = document.createElement('img');
     imageElement.src = imageObject[i];
@@ -150,30 +161,3 @@ function imageDisplay(imageObject) {
 }
 
 imageDisplay(bookimage);
-
-// eslint-disable-next-line no-undef
-ul.style.display = 'grid';
-ul.style.gridTemplateColumns = 'auto auto';
-ul.style.gridAutoColumns = 'minmax(auto,auto)';
-ul.style.gridAutoRows = 'minmax(auto,auto)';
-
-// eslint-disable-next-line no-unused-vars
-function createGrid(x) {
-  for (let rows = 0; rows < x; rows++) {
-    for (let col = 0; col < x; col++) {
-      // eslint-disable-next-line no-undef
-    //  $('#booktitle').append("<div> class='grid'></div>");
-      const grid = document.getElementById("booktitle");
-      grid.appendChild(li)
-    }
-  }
-
-  // eslint-disable-next-line no-undef
-  $('.grid').height(960 / x);
-  // eslint-disable-next-line no-undef
-  $('.grid').width(960 / x);
-}
-
-// eslint-disable-next-line no-undef
-createGrid(2);
-*/
