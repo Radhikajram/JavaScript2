@@ -2,7 +2,7 @@
 
 const myNumbers = [1, 2, 3, 4];
 
-/* function doubleOddNumbers(numbers) {
+/* function doubleOddNumbers(numbers = [0]) {
   //   // Replace this comment and the next line with your code
   const newNumbers = [];
   for (let i = 0; i < numbers.length; i++) {
@@ -13,10 +13,11 @@ const myNumbers = [1, 2, 3, 4];
   return newNumbers;
 } */
 
-const doubleOddNumbers = myNumbers.filter(numbers => numbers % 2 !== 0).map(numbers => numbers * 2);
+const doubleOddNumbers = numbers =>
+  numbers.filter(number => number % 2 !== 0).map(number => number * 2);
+
 // eslint-disable-next-line no-unused-vars
 const result = doubleOddNumbers(myNumbers);
-console.log(result);
 
 // Do not change or remove anything below this line
 module.exports = {

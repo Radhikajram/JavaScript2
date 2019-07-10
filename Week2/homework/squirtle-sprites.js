@@ -1,5 +1,5 @@
 /* eslint-disable */
-
+//alert('file is attached');
 /* 
   Call this function to get a JSON string of the data
   (simulates calling a server to retrieve data)
@@ -9,3 +9,15 @@ function fetchPokemonData() {
 }
 
 /* Code goes below */
+
+// Convert  the JSON object into Javascript object
+const returnResponse = JSON.parse(fetchPokemonData());
+
+// Loop through the Sprites and display the image if it is not null
+for (const i in returnResponse.sprites) {
+  if (returnResponse.sprites[i] !== null) {
+    const imageElement = document.createElement('img');
+    imageElement.src = returnResponse.sprites[i];
+    document.body.appendChild(imageElement);
+  }
+}
