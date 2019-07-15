@@ -1,6 +1,9 @@
 'use strict';
 
 function Dog() {
+  this.name = 'Rupert';
+  this.color = 'brown';
+  this.numLegs = 4;
   // add your code here
 }
 

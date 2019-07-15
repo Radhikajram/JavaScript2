@@ -5,7 +5,7 @@ const mockSayFive = jest.fn(() => undefined);
 
 describe('step2-2', () => {
   test('12 and 15 divisible by 3', () => {
-    threeFive(10, 15, mockSayThree, () => undefined);
+    threeFive(12, 15, mockSayThree, () => undefined);
 
     expect(mockSayThree.mock.calls.length).toBe(2);
     expect(mockSayThree.mock.calls[0][0]).toBe(12);

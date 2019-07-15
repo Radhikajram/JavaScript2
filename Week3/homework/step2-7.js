@@ -20,4 +20,10 @@ f2(y);
 
 console.log(y);
 
-// Add your explanation as a comment here
+/* Add your explanation as a comment here
+1. X is declared as global variable.Though it is parameter of function, it is manipulated inside the function but
+return value is not captured anywhere.The scope of the passed value is within
+the scope of function.So console of x still display the value as 9.
+
+2. The x is one of the reference variable inside the object. The function directly manipulates the x value and whenever
+the reference of object is made we are getting the updated value of x. */

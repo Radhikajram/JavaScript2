@@ -4,9 +4,12 @@ const values = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c'];
 
 function makeUnique(arr) {
   // Replace this comment and the next line with your code
-  console.log(arr);
+  return [...new Set(arr)];
+
+  // console.log(arr);
 }
 
+console.log(values);
 const uniqueValues = makeUnique(values);
 console.log(uniqueValues);
 

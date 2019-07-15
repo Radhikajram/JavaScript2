@@ -5,12 +5,15 @@ const arr3d = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
 
 function flattenArray2d(arr) {
   // Replace this comment and the next line with your code
-  console.log(arr);
+  // eslint-disable-next-line prefer-spread
+  const arraySecond = [].concat(...arr);
+  return arraySecond;
 }
 
 function flattenArray3d(arr) {
   // Replace this comment and the next line with your code
-  console.log(arr);
+  const arrayThird = arr.flat(2);
+  return arrayThird;
 }
 
 console.log(flattenArray2d(arr2d)); // -> [1, 2, 3, 4, 5, 6]
