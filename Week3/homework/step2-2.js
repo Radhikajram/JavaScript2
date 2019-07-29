@@ -1,8 +1,11 @@
 'use strict';
 
 function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
-  const numbers = [startIndex, stopIndex];
+  const numbers = [];
 
+  for (let i = startIndex; i < stopIndex + 1; i++) {
+    numbers.push(i);
+  }
   // Replace this comment and the next line with your code
   for (const i of numbers) {
     if (typeof threeCallback !== 'undefined' && i % 3 === 0) {
