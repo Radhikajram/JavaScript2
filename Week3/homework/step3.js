@@ -2,7 +2,6 @@
 
 function createBase(base) {
   // Replace this comment and the next line with your code
-  // eslint-disable-next-line no-use-before-define
   return function(add) {
     return base + add;
   };
